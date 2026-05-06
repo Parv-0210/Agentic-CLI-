@@ -218,7 +218,7 @@ This project is a learning exercise. The cloned page imitates the structure and 
 
 <div align="center">
 
-**Built by Rajveer Bishnoi**
+**Built by Rajveer Bishnoi** 🧃
 
 </div>
 
