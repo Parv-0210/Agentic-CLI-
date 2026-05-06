@@ -16,12 +16,12 @@ const figletAsync = (text, opts) =>
 // ---------- Startup Banner ----------
 
 async function printBanner() {
-  const text = await figletAsync("RAJVEER42", { font: "ANSI Shadow" });
+  const text = await figletAsync("PARV", { font: "ANSI Shadow" });
   const lines = text.split("\n");
 
-  // Gradient: blue-purple (#6060FF) -> hot-pink (#FF40CC)
-  const startRGB = [96, 96, 255];  // blue-purple
-  const endRGB   = [255, 64, 204]; // hot-pink
+  // Gradient: indigo (#6366f1) -> violet (#a855f7) — matches UI accent.
+  const startRGB = [99, 102, 241];  // indigo
+  const endRGB   = [168, 85, 247];  // violet
 
   const maxLen = Math.max(...lines.map((l) => l.length)) || 1;
 
@@ -185,7 +185,7 @@ async function fetchScalerSite() {
     .map((s) => s.replace(/<[^>]+>/g, "").trim())
     .filter((t) => t && t.length < 40);
 
-  // primary brand color hints — Scaler uses teal #00A699
+  // primary brand color hints — clone uses indigo #6366f1 (override scraped colors)
   const colorHints = [
     ...new Set(
       (data.match(/#(?:[0-9a-fA-F]{3}){1,2}\b/g) || [])
@@ -303,8 +303,8 @@ Rules:
    - Lists: every <ul> in nav and content rows MUST have "list-style: none;" — bullets must NOT appear in the rendered nav or company strip.
    - Container: define a ".container" or apply "max-width: 1200px; margin: 0 auto; padding: 0 24px;" to header / sections / footer so they don't span 100vw flush.
    - Header nav: horizontal flexbox row (display: flex; align-items: center; justify-content: space-between). Logo left, nav links centered or grouped, CTAs right. Hover states on every link.
-   - Buttons: padding ~12px 24px, border-radius 8px, font-weight 600, distinct primary (filled teal) and secondary (outlined teal) variants, hover transitions.
-   - Hero: large heading (clamp or ~3rem desktop), pill badge, two CTAs side-by-side, generous vertical padding (~80–100px), subtle teal-tinted background acceptable but no harsh gradients.
+   - Buttons: padding ~12px 24px, border-radius 8px, font-weight 600, distinct primary (filled indigo) and secondary (outlined indigo) variants, hover transitions.
+   - Hero: large heading (clamp or ~3rem desktop), pill badge, two CTAs side-by-side, generous vertical padding (~80–100px), subtle indigo-tinted background acceptable but no harsh gradients.
    - Trusted-by strip: horizontal flex row, no bullets, grayed-out company labels (#cbd5e1) that darken on hover. Eyebrow label uppercase letter-spaced.
    - Footer: full-width dark navy (#0f172a) bar with white/light-gray text and ~40–56px padding.
    - Media queries: at least one breakpoint at 900px and one at 600px adapting nav, hero, and grid layouts.
@@ -416,7 +416,7 @@ Rules:
    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
    :root {
      --bg: #ffffff; --bg-soft: #f7f8fa;
-     --primary: #00A699; --primary-dark: #008C82; --primary-soft: #e6faf8;
+     --primary: #6366f1; --primary-dark: #4f46e5; --primary-soft: #eef2ff;
      --ink: #0f172a; --text: #475569; --muted: #94a3b8; --rule: #e5e7eb;
      --footer-bg: #0f172a; --footer-bg-2: #1e293b;
    }
@@ -449,7 +449,7 @@ Rules:
    Required pass-3 (hero) MUST set:
      .hero { background: linear-gradient(180deg, #fff 0%, var(--bg-soft) 100%); padding: 96px 0 104px; border-bottom: 1px solid var(--rule); }
      .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; }
-     .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-soft); color: var(--primary); font-size: 0.8125rem; font-weight: 600; padding: 6px 14px; border-radius: 999px; border: 1px solid #b2ede8; margin-bottom: 28px; }
+     .badge { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-soft); color: var(--primary); font-size: 0.8125rem; font-weight: 600; padding: 6px 14px; border-radius: 999px; border: 1px solid #c7d2fe; margin-bottom: 28px; }
      .badge-dot { width: 7px; height: 7px; background: var(--primary); border-radius: 50%; }
      .hero-title { font-size: clamp(2.25rem, 5.4vw, 4rem); font-weight: 700; line-height: 1.1; letter-spacing: -1px; max-width: 18ch; margin-bottom: 22px; }
      .hero-title .highlight { color: var(--primary); }

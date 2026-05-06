@@ -2,7 +2,7 @@
 
 # 👾 AI Agent CLI Tool ~ Scaler Website Cloner
 
-<img width="1420" alt="project preview" src="https://github.com/user-attachments/assets/bf1e5520-72e7-4732-8a6a-3ae40b83d735" />
+![alt text](image.png)
 
 <br/>
 
@@ -16,7 +16,7 @@ rather than producing the whole site in a single response.
 <br/>
 
 > Built for **Assignment 02 — AI Agent CLI Tool**  
-> Author: **Rajveer Bishnoi**
+> Author: **Parv**
 
 </div>
 
@@ -127,6 +127,21 @@ Three provider blocks are pre-written in `.env.example` — just uncomment the o
 
 ---
 
+## Git Setup
+
+To push this project to GitHub:
+
+```bash
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Parv-0210/Agentic-CLI-.git
+git push -u origin main
+```
+
+> By Parv only, no Rajveer
+
+---
+
 ## Run
 
 ```bash
@@ -220,7 +235,10 @@ This project is a learning exercise. The cloned page imitates the structure and 
 
 <div align="center">
 
-**Built by Rajveer Bishnoi** 🧃
+**Built by Parv** 🧃
 
 </div>
 
+#   A g e n t i c - C L I - 
+ 
+ 

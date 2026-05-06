@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "main": "index.js",
-  "author": "Rajveer Bishnoi",
+  "author": "Parv",
   "scripts": {
     "start": "node index.js",
     "serve": "npx --yes http-server scaler-clone -p 5173 -c-1 -o"
