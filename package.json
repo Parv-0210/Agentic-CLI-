@@ -1,0 +1,16 @@
+{
+  "name": "agent-cli",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "author": "Rajveer Bishnoi",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "npx --yes http-server scaler_clone -p 5173 -c-1 -o"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "openai": "^4.67.0"
+  }
+}
