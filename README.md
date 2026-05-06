@@ -1,6 +1,6 @@
 <div align="center">
 
-# 👾 AI Agent CLI Tool — Scaler Website Cloner
+# 👾 AI Agent CLI Tool ~ Scaler Website Cloner
 
 <img width="720" alt="project preview" src="https://github.com/user-attachments/assets/b4d1367c-c8ba-42e3-80cc-fb763e3ca29f" />
 
