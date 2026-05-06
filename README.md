@@ -1,4 +1,3 @@
-<div align="center">
 
 # 👾 AI Agent CLI Tool ~ Scaler Website Cloner
 
@@ -236,9 +235,3 @@ This project is a learning exercise. The cloned page imitates the structure and 
 <div align="center">
 
 **Built by Parv** 🧃
-
-</div>
-
-#   A g e n t i c - C L I - 
- 
- 
