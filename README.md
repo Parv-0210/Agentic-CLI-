@@ -36,24 +36,26 @@ A pre-generated example output is included at [`scaler_clone/`](scaler_clone/) s
 
 ## Project structure
 
-```
-
+```text
 .
 ├── index.js              # the CLI agent (entry point)
 ├── package.json          # node project config + scripts
 ├── .env.example          # template — copy to .env and fill in
 ├── .gitignore
 ├── scaler_clone/         # example output produced by the agent
-│   ├── index.html        # header, hero, features, programs, outcomes, CTA, footer
-│   ├── style.css         # light-theme Scaler-style design system
-│   ├── script.js         # mobile nav, dropdowns, scroll reveal
-│   └── favicon.png
+│   ├── index.html        # main layout
+│   ├── css/
+│   │   └── style.css     # light-theme Scaler-style design system
+│   ├── js/
+│   │   └── script.js     # mobile nav, dropdowns, scroll reveal
+│   └── images/
+│       ├── favicon.png   # site icon
+│       └── hero-image.jpg# tech illustration hero image
 └── brutalist_blog/       # bonus: a separate brutalist blog UI demo
-├── index.html
-├── style.css
-└── script.js
-
-````
+    ├── index.html
+    ├── style.css
+    └── script.js
+```
 
 ---
 
