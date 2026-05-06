@@ -2,9 +2,11 @@
 
 # 👾 AI Agent CLI Tool ~ Scaler Website Cloner
 
-<img width="720" alt="project preview" src="https://github.com/user-attachments/assets/b4d1367c-c8ba-42e3-80cc-fb763e3ca29f" />
+<img width="1420" alt="project preview" src="https://github.com/user-attachments/assets/01539acf-8b41-4e44-bb87-16e3d92ddf7b" />
 
 <br/>
+
+----------
 
 A conversational CLI agent that runs in the terminal and clones the Scaler  
 Academy website into a working `index.html` / `style.css` / `script.js` set of files.  
