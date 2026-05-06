@@ -5,6 +5,41 @@ import { exec } from "child_process";
 import { promises as fs } from "fs";
 import path from "path";
 import readline from "readline";
+import figlet from "figlet";
+
+// Wrap figlet in a proper Promise (avoids promisify deprecation on Promise-returning fns)
+const figletAsync = (text, opts) =>
+  new Promise((resolve, reject) =>
+    figlet.text(text, opts, (err, result) => (err ? reject(err) : resolve(result)))
+  );
+
+// ---------- Startup Banner ----------
+
+async function printBanner() {
+  const text = await figletAsync("RAJVEER42", { font: "ANSI Shadow" });
+  const lines = text.split("\n");
+
+  // Gradient: blue-purple (#6060FF) -> hot-pink (#FF40CC)
+  const startRGB = [96, 96, 255];  // blue-purple
+  const endRGB   = [255, 64, 204]; // hot-pink
+
+  const maxLen = Math.max(...lines.map((l) => l.length)) || 1;
+
+  const colored = lines.map((line) =>
+    line
+      .split("")
+      .map((char, i) => {
+        const t = i / maxLen;
+        const r = Math.round(startRGB[0] + t * (endRGB[0] - startRGB[0]));
+        const g = Math.round(startRGB[1] + t * (endRGB[1] - startRGB[1]));
+        const b = Math.round(startRGB[2] + t * (endRGB[2] - startRGB[2]));
+        return `\x1b[38;2;${r};${g};${b}m${char}`;
+      })
+      .join("") + "\x1b[0m"
+  );
+
+  console.log("\n" + colored.join("\n") + "\n");
+}
 
 const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -350,12 +385,13 @@ async function main() {
     process.exit(1);
   }
 
+  await printBanner();
+
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
   const ask = (q) => new Promise((res) => rl.question(q, res));
 
-  console.log("Agent CLI ready. Type an instruction, or 'exit' to quit.");
-  console.log(`Model: ${MODEL}`);
-  console.log("Try: Clone the Scaler website with header, hero, and footer into a folder called scaler_clone.\n");
+  console.log(`\x1b[90m  Model : \x1b[0m\x1b[36m${MODEL}\x1b[0m`);
+  console.log(`\x1b[90m  Tip   : \x1b[0mType an instruction, or \x1b[33m'exit'\x1b[0m to quit.\n`);
 
   const history = [{ role: "system", content: SYSTEM_PROMPT }];
 
