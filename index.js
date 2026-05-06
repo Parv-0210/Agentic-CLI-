@@ -42,8 +42,8 @@ async function printBanner() {
 }
 
 const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: process.env.OPENAI_BASE_URL || undefined,
+  apiKey: process.env.GEMINI_API_KEY,
+  baseURL: process.env.GEMINI_BASE_URL || undefined,
 });
 
 const MODEL = process.env.MODEL || "gpt-4.1-mini";
@@ -54,7 +54,7 @@ const JSON_MODE = (() => {
   const explicit = (process.env.JSON_MODE || "").toLowerCase();
   if (explicit === "on") return true;
   if (explicit === "off") return false;
-  const base = process.env.OPENAI_BASE_URL || "";
+  const base = process.env.GEMINI_BASE_URL || "";
   return !base.includes("anthropic");
 })();
 
@@ -380,8 +380,8 @@ async function runAgent(userInput, history) {
 // ---------- CLI ----------
 
 async function main() {
-  if (!process.env.OPENAI_API_KEY) {
-    console.error("Missing OPENAI_API_KEY in .env (copy .env.example to .env first).");
+  if (!process.env.GEMINI_API_KEY) {
+    console.error("Missing GEMINI_API_KEY in .env (copy .env.example to .env first).");
     process.exit(1);
   }
 
