@@ -2,7 +2,7 @@
 
 # 👾 AI Agent CLI Tool ~ Scaler Website Cloner
 
-<img width="1420" alt="project preview" src="https://github.com/user-attachments/assets/01539acf-8b41-4e44-bb87-16e3d92ddf7b" />
+<img width="1420" alt="project preview" src="https://github.com/user-attachments/assets/bf1e5520-72e7-4732-8a6a-3ae40b83d735" />
 
 <br/>
 
